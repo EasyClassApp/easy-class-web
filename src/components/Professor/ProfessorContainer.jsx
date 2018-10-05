@@ -19,6 +19,10 @@ class ProfessorContainer extends Component {
       marginRight: 10,
     };
 
+    const buttonMargin = {
+      margin: 10,
+    };
+
     function CheckboxRevisado(name) {
       return (
         <span>
@@ -29,22 +33,27 @@ class ProfessorContainer extends Component {
     }
 
     return (
-      <div styleName="container">
-        <div styleName="title">Professor</div>
-        <h5>Nome</h5>
-        <input type="text" /> {CheckboxRevisado('nome')}
-        <h5>Email</h5>
-        <input type="text" /> {CheckboxRevisado('email')}
-        <h5>Endereço</h5>
-        <input type="text" /> {CheckboxRevisado('endereco')}
-        <h5>Lattes</h5>
-        <input type="text" /> {CheckboxRevisado('lattes')}
-        <h5>Diploma</h5>
-        <input type="text" /> {CheckboxRevisado('diploma')}
-        <h5>Biografia</h5>
-        <input type="text" /> {CheckboxRevisado('biografia')}
-        <h5>Data Nascimento</h5>
-        <input type="text" /> {CheckboxRevisado('dataNascimento')}
+      <div>
+        <div styleName="container">
+          <div styleName="title">Professor</div>
+          <h5>Nome</h5>
+          <input type="text" value="Professora revisar" /> {CheckboxRevisado('nome')}
+          <h5>Email</h5>
+          <input type="text" value="naorevisado@easyclass.com.br" /> {CheckboxRevisado('email')}
+          <h5>Endereço</h5>
+          <input type="text" value="teste de professor" /> {CheckboxRevisado('endereco')}
+          <h5>Lattes</h5>
+          <input type="text" value="professor.lattes.com" /> {CheckboxRevisado('lattes')}
+          <h5>Diploma</h5>
+          <input type="text" value="diploma de teste" /> {CheckboxRevisado('diploma')}
+          <h5>Biografia</h5>
+          <input type="text" value="biografia de teste" /> {CheckboxRevisado('biografia')}
+          <h5>Data Nascimento</h5>
+          <input type="date" /> {CheckboxRevisado('dataNascimento')}
+        </div>
+        <div>
+          <button className="button is-success" style={buttonMargin}>Enviar Revisão</button>
+        </div>
       </div>
     );
   }
