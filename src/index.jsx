@@ -38,7 +38,7 @@ ReactDOM.render(
               <Route path="/professores" component={ProfessoresContainer} />
               <Route path="/alunos" component={AlunosContainer} />
               <Route exact path="/aprovacao-professor" component={AprovacaoProfessorContainer} />
-              <Route path="/aprovacao-professor" component={ProfessorContainer} />
+              <Route path="/professor" component={ProfessorContainer} />
             </Fragment>
           )}
           />
