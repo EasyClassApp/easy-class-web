@@ -13,6 +13,10 @@ class AprovacaoProfessorContainer extends Component {
   }
 
   render() {
+    function urlProfessor(id) {
+      return `/aprovacao-professor/${id}`;
+    }
+
     let { professorList } = this.props;
     professorList = professorList.filter(professor => (!professor.revisado));
     return (
@@ -25,7 +29,7 @@ class AprovacaoProfessorContainer extends Component {
               <th>Email do Professor</th>
               <th>Ação</th>
             </tr>
-            {professorList.map(professor => <tr key={professor._id}><td>{professor.nome}</td><td>{professor.email}</td><td><a className="btn btn-primary" href="/professor">Revisar Cadastro</a></td></tr>)}
+            {professorList.map(professor => <tr key={professor._id}><td>{professor.nome}</td><td>{professor.email}</td><td><a className="btn btn-primary" href={urlProfessor(1)}>Revisar Cadastro</a></td></tr>)}
           </tbody>
         </table>
       </div>
