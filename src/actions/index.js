@@ -1,3 +1,4 @@
+/* eslint-disable */
 import axios from 'axios';
 import history from '../history';
 import * as actionTypes from './types';
@@ -88,11 +89,24 @@ export function fetchProfessor(idProfessor) {
   return async (dispatch) => {
     try {
       const response = await axios.get(`${BASE_URL}/professor/${idProfessor}`);
-      dispatch({ type: actionTypes.PROFESSOR_LIST_FETCHED, professor: response.data[0] });
+      dispatch({ type: actionTypes.PROFESSOR_FETCHED, professor: response.data });
     } catch (error) {
-      dispatch({ type: actionTypes.PROFESSOR_LIST_FETCHED_ERROR, fetchedProfessorErrors: mapErrorsFromResponse(error) });
+      dispatch({ type: actionTypes.PROFESSOR_FETCHED_ERROR, fetchedProfessorErrors: mapErrorsFromResponse(error) });
     }
   };
+}
+
+export function validateProfessor(professor) {
+  return async (dispatch) => {
+    try {
+      const response = await axios.post(`${BASE_URL}/professor/validate`, professor)
+      dispatch({ type: actionTypes.PROFESSOR_VALIDATE, validationResponse: response.data });
+
+      history.push('/aprovacao-professor');
+    } catch (error) {
+      dispatch({ type: actionTypes.PROFESSOR_VALIDATE_ERROR, fetchedValidationErrors: mapErrorsFromResponse(error) });
+    }
+  }
 }
 
 /* UI */

@@ -1,7 +1,8 @@
-import { PROFESSOR_LIST_FETCHED } from '../actions/types';
+import { PROFESSOR_LIST_FETCHED, PROFESSOR_FETCHED } from '../actions/types';
 
 const initialState = {
   professores: [],
+  professor: {},
 };
 
 export default (state = initialState, action) => {
@@ -10,6 +11,12 @@ export default (state = initialState, action) => {
       return {
         ...state,
         professores: action.professores,
+      };
+    }
+    case PROFESSOR_FETCHED: {
+      return {
+        ...state,
+        professor: action.professor,
       };
     }
 

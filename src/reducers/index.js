@@ -9,6 +9,7 @@ const rootReducer = combineReducers({
   authData: authReducer,
   usersData: userReducer,
   professoresData: professorReducer,
+  professorData: professorReducer,
   alunosData: alunoReducer,
   uiData: uiReducer,
 });
