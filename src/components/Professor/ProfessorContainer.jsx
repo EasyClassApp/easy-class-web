@@ -11,8 +11,6 @@ import { fetchProfessor, validateProfessor } from '../../actions';
 class ProfessorContainer extends Component {
   componentWillMount() {
     this.props.fetchProfessor(this.props.match.params.id);
-    console.log(this.props);
-    console.log(this.props.match.params.id);
   }
 
   constructor(props) {
@@ -80,8 +78,6 @@ class ProfessorContainer extends Component {
       );
     }
     let { professor } = this.props;
-    console.log("Professor");
-    console.log(professor);
     return (
       <div>
         <div styleName="container">
