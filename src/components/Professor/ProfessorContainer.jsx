@@ -48,8 +48,14 @@ class ProfessorContainer extends Component {
         revisado = false;
       }
     }
-
     let professor = this.props.professor;
+
+    if(!revisado) {
+      alert("Professor ainda tem campos a serem revisados. Escreva um e-mail para o professor para notificá-lo.");
+    } else {
+      alert("Cadastro revisado. O professor " + professor.nome + " poderá acessar o aplicativo normalmente.");
+    }
+
     professor.camposInvalidos = camposInvalidos;
     professor.revisado = revisado;
     this.props.validateProfessor(professor);
