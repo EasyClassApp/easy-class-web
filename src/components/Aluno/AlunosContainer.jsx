@@ -23,8 +23,9 @@ class AlunosContainer extends Component {
               <th>Nome</th>
               <th>Email</th>
               <th>Responsável</th>
+              <th>Matéria de maior dificuldade</th>
             </tr>
-            {alunoList.map(aluno => <tr key={aluno._id}><td>{aluno.nome}</td><td>{aluno.email}</td><td>{ aluno.responsavel ? 'Responsável' : 'Não Responsável' }</td></tr>)}
+            {alunoList.map(aluno => <tr key={aluno._id}><td>{aluno.nome}</td><td>{aluno.email}</td><td>{ aluno.responsavel ? 'Responsável' : 'Não Responsável' }</td><td>{ aluno.materiaDificuldade ? aluno.materiaDificuldade.nome : 'nenhuma' }</td></tr>)}
           </tbody>
         </table>
       </div>
