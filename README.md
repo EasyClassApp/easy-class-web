@@ -44,6 +44,8 @@ Cria imagem e executa container para desenvolvimento:
   # docker-compose up app
 ````
 
+A aplicação em modo produção ficará disponível em **localhost:3000**
+
 Cria imagem, gera container para testes e executa os testes:
 
 ````
@@ -57,4 +59,4 @@ Faz o build do projeto com webpack e gera container Nginx para servir o resultad
   # docker run --name ec-prod-container -p 8080:80 ec-prod-image
 ````
 
-Após estes comandos a aplicação estará disponível em **localhost:8080**
+A aplicação em modo produção ficará disponível em **localhost:8080**

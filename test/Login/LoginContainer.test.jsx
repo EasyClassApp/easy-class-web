@@ -2,7 +2,7 @@ import React from 'react';
 import { styledComponent as LoginContainer } from '../../src/components/Login/LoginContainer';
 
 describe('LoginContainer', () => {
-  test('Exibe painel de erros com a quantidade correta de mensagens de erro', () => {
+  test('Exibe painel de erros com a quantidade correta de mensagens de erro', async () => {
     // arrange
     const errors = ['Mensagem de erro 01', 'Mensagem de erro 02'];
 
