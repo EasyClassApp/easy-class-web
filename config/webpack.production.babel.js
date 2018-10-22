@@ -12,7 +12,7 @@ const productionConfig = merge([
   }),
   parts.minificationPlugin(),
   parts.setFreeVariablePlugin('process.env.NODE_ENV', 'production'),
-  parts.setFreeVariablePlugin('SERVER_URL', 'https://es-easy-class-api.herokuapp.com'),
+  parts.setFreeVariablePlugin('SERVER_URL', 'https://easy-class-api-production.herokuapp.com'),
 ]);
 
 export default productionConfig;
