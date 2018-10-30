@@ -1,4 +1,3 @@
-
 ###########################################################################################
 # BUILD PHASE
 ###########################################################################################
@@ -14,10 +13,9 @@ RUN npm install
 # copy application files (moved here to make use of Docker's cache machanism)
 COPY . /usr/src/app
 
-# runs differente versions of webpack build for staging and production (just the API server URL differs)
-ARG environment
-RUN echo $environment
-RUN if [ "$environment" = "staging" ] ; then npm run build-staging ; else npm run build ; fi
+# generate the static build with webpack
+RUN npm run build-staging
+
 
 ###########################################################################################
 # RUN PHASE: COPY TO NGINX (SERVES BY DEFAUT ON PORT 80)
