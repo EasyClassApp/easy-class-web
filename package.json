@@ -4,7 +4,8 @@
   "description": "Easy Class Web Client",
   "main": "index.js",
   "scripts": {
-    "build": "rimraf build && webpack --config ./config/webpack.production.babel.js",
+    "build": "rimraf build && webpack --env.NODE_ENV=production --config ./config/webpack.production.babel.js",
+    "build-staging": "rimraf build && webpack --env.NODE_ENV=staging --config ./config/webpack.production.babel.js",
     "start": "webpack-dev-server --config ./config/webpack.development.babel.js",
     "test": "jest --verbose --watchAll",
     "test-ci": "jest --verbose"
